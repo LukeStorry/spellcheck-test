@@ -1,22 +1,4 @@
 matrix:
-- name: Python
-  sources:
-  - '**/*.py'
-  aspell:
-    lang: en
-  dictionary:
-    wordlists:
-    - wordlist.txt
-    output: wordlist.dic
-    encoding: utf-8
-  pipeline:
-  - pyspelling.filters.python:
-    comments: true
-    docstrings: true
-    group_comments: false
-    decode_escapes: true
-    strings: false
-    string_types: fu
 - name: Markdown
   apsell:
     mode: none
@@ -30,14 +12,3 @@ matrix:
   - pyspelling.filters.html:
   sources:
   - '**/*.md'
-- name: Text
-  sources:
-  - '**/*.txt'
-  dictionary:
-    wordlists:
-    - wordlist.txt
-    output: wordlist.dic
-    encoding: utf-8
-  pipeline:
-  - pyspelling.filters.text:
-      convert_encoding: utf-8
