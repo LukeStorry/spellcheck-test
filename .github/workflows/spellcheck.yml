@@ -1,14 +1,15 @@
-name: spellcheck
+name: Typo CI
 
 on:
   push:
-
+    branches-ignore:
+      - master
 jobs:
   spellcheck:
-    name: runner / spellcheck
+    name: Typo CI (GitHub Action)
     runs-on: ubuntu-latest
+    timeout-minutes: 4
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
-    - name: Check out code.
-      uses: actions/checkout@v2
-    - name: Run PySpelling as a GitHub action
-      uses: sbates130272/spellcheck-github-actions@v0.6.0
+    - name: TypoCheck
+      uses: typoci/spellcheck-action@master
