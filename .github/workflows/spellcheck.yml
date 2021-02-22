@@ -2,8 +2,6 @@ name: Typo CI
 
 on:
   push:
-    branches-ignore:
-      - master
 jobs:
   spellcheck:
     name: Typo CI (GitHub Action)
@@ -13,3 +11,5 @@ jobs:
     steps:
     - name: TypoCheck
       uses: typoci/spellcheck-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
