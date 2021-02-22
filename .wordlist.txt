@@ -1,6 +1,0 @@
-github
-todo
-PySpelling
-config
-repo
-yaml
