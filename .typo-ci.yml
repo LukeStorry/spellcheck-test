@@ -1,0 +1,7 @@
+excluded_files:
+  - ".typo-ci.yml"
+
+excluded_words:
+  - typoci
+
+spellcheck_filenames: true
